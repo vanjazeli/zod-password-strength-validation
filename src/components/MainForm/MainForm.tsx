@@ -3,12 +3,20 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "@/component
 import { Button, Input, Checkbox, Label } from "@/components";
 import useMainForm from "./useMainForm";
 import { mainFormSchema } from "./mainFormSchema";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader } from "../ui/dialog";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 export const MainForm = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [codeSnippet, setCodeSnippet] = useState("");
+
   const form = useMainForm();
 
   const handleSubmit = (values: z.infer<typeof mainFormSchema>) => {
-    console.log(values);
+    setCodeSnippet(JSON.stringify(values, null, 2));
+    setIsOpen(true);
   };
 
   return (
@@ -116,6 +124,20 @@ export const MainForm = () => {
           <Button type="submit">Submit</Button>
         </form>
       </Form>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">Success!</h2>
+          </DialogHeader>
+          <DialogDescription>
+            <p className="leading-7 [&:not(:first-child)]:mt-6">You have successfully fake-sumbitted the form!</p>
+            <p className="leading-7 [&:not(:first-child)]:mt-6">Your form data:</p>
+            <SyntaxHighlighter className="[&:not(:first-child)]:mt-6" language="javascript" style={vscDarkPlus}>
+              {codeSnippet}
+            </SyntaxHighlighter>
+          </DialogDescription>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
