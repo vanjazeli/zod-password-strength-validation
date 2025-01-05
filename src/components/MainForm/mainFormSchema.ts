@@ -8,7 +8,6 @@ export const mainFormSchema = z
     username: z
       .string()
       .min(usernameMinLength, { message: `Username must be at least ${usernameMinLength} characters long.` })
-      .regex(/^\S*$/, { message: "Username can't contain a space." })
       .regex(/^[a-z0-9._]*$/, { message: "Username contains invalid characters." }),
     email: z.string().min(1, { message: "This field is required." }).email({ message: "Please enter a valid email address." }),
     password: z
