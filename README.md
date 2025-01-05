@@ -4,7 +4,7 @@ Production-level example of how to leverage Zod for password strength validation
 
 ## Demo
 
-Check out the demo of this project right [here](https://vanjazeli.github.io//).
+Check out the demo of this project right [here](https://vanjazeli.github.io/zod-password-strength-validation/).
 
 ## Credits
 
