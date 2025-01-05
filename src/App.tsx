@@ -2,7 +2,7 @@ import { MainForm } from "./components";
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen py-10 flex items-center">
       <MainForm />
     </div>
   );

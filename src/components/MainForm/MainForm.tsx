@@ -12,7 +12,7 @@ export const MainForm = () => {
   };
 
   return (
-    <div className="max-w-[400px] mx-auto my-10">
+    <div className="px-5 max-w-[400px] mx-auto">
       <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">Registration</h2>
       <p className="leading-7 [&:not(:first-child)]:mt-6">Production-level example of how to leverage Zod for password strength validation in combination with shadcn/ui, React Hook Form, and React.</p>
       <p className="text-xs text-muted-foreground [&:not(:first-child)]:mt-6">Input a password to trigger the strength validation.</p>
