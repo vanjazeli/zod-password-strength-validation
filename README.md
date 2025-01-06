@@ -1,4 +1,4 @@
-# React Hook Form
+# Zod Password Strength Validation
 
 Production-level example of how to leverage Zod for password strength validation in combination with shadcn/ui, React Hook Form, and React.
 
